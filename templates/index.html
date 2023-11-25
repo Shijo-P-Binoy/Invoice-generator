@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invoice</title>
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    color: rgb(0, 0, 0);
+    font-size: 25px;
+}
+
+.invoice-container {
+    width: 100vw;
+    height: 100vh;
+    margin: 0 auto;
+    padding: 20px;
+}
+.invoice-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+}
+
+.invoice-logo {
+    width: 150px;
+    height: auto;
+}
+
+.invoice-info {
+    text-align: right;
+}
+
+.invoice-customer {
+    padding-bottom: 20px;
+}
+
+.invoice-items {
+    padding-bottom: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td {
+    padding: 5px;
+    text-align: left;
+    border: 1px solid #ccc;
+}
+
+.invoice-footer {
+    text-align: center;
+}
+
+    </style>
+</head>
+<body>
+    <div class="invoice-container">
+        <div class="invoice-header">
+            <div class="invoice-logo">
+                <img src='/logo.png'alt="Company Logo" width="200px" height="200px" >
+            </div>
+            <div class="invoice-info">
+                <h2  style="font-size: 33px;font-weight: 1000;">Invoice</h2>
+                <p>Invoice Number: INV-20231124</p>
+                <p>Invoice Date: 2023-11-24</p>
+            </div>
+        </div>
+        <div class="invoice-customer">
+            <h3  style="font-size: 33px;font-weight: 1000;">Customer Information</h3>
+            <p>Customer Name: {{ name }}</p>
+            <p>Customer Address: {{ location }}</p>
+            <p>Customer Phone Number: 123-456-7890</p>
+        </div>
+        <div class="invoice-items">
+            <h3  style="font-size: 33px;font-weight: 1000;">Itemized List</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Quantity</th>
+                        <th>Unit Price</th>
+                        <th>Amount</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Samsung Galaxy S23 Ultra</td>
+                        <td>1</td>
+                        <td>₹1,54,999</td>
+                        <td>₹1,54,999</td>
+                    </tr>
+                    <tr>
+                        <td>Samsung Galaxy S23 Ultra</td>
+                        <td>1</td>
+                        <td>₹1,34,999</td>
+                        <td>₹1,34,999</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="3">Sub Total</td>
+                        <td>₹2,89,998</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">SGST (5%)</td>
+                        <td>₹14,499.90</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">CGST (5%)</td>
+                        <td>₹14,499.90</td>
+                    </tr>
+                    <tr>
+                        <td colspan="3">Grand Total</td>
+                        <td>₹3,29,996.70</td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
+        <div>
+        <P style="font-size: 33px;font-weight: 1000;">Terms and Conditions:<br></P>
+        <p  style="font-weight: 500;"> * Goods once sold are not returnable or refundable.</P>
+        <p  style="font-weight: 500;"> * The buyer is responsible for all damages caused to the goods during transit.</P>
+        <p  style="font-weight: 500;"> * The seller is not responsible for any consequential damages arising from the use of the goods.</P>
+        <p  style="font-weight: 500;"> * Any disputes arising from this invoice shall be subject to the jurisdiction of the courts of Kottayam.</P>
+    </div>
+        <div class="invoice-footer">
+            <p>Payment Terms: Net 30 days</p>
+            <p>Thank you for your business!</p>
+        </div>
+    </div>
+</body>
+</html>
